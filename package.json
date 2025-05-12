@@ -31,5 +31,10 @@
     "lint": "eslint .",
     "format": "eslint . --fix",
     "test": "node --test && npm run lint"
+  },
+  "dependencies": {
+    "error-value": "^0.4.4",
+    "meros": "^1.3.0",
+    "mitt": "^3.0.1"
   }
 }

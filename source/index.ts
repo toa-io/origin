@@ -1,4 +1,7 @@
-// Start something great
-const a = 5
-
-export { a }
+export { Resource } from './Resource'
+export { Method } from './Method'
+export { Failure } from './Failure'
+export { authenticate, request, use, type Options } from './request'
+export { events } from './events'
+export { connect } from './settings'
+export type * from './Octets'
