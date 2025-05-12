@@ -13,6 +13,8 @@
   "bugs": {
     "url": "git@github.com:toa-io/origin.git/issues"
   },
+  "main": "transpiled/index.js",
+  "types": "transpiled/index.d.ts",
   "peerDependencies": {
     "typescript": "^5.8.3"
   },
@@ -25,6 +27,7 @@
   },
   "scripts": {
     "prepare": "husky",
+    "prepublishOnly": "rm -rf transpiled && tsc",
     "lint": "eslint .",
     "format": "eslint . --fix",
     "test": "node --test && npm run lint"
