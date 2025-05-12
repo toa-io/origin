@@ -32,19 +32,19 @@ import type { Favorite } from './Favorite'
 // Initialize a resource client
 const favorites = new Resource<Favorite>('/favorites/', { credentials: 'include' })
 
-// GET /favorites/:identity
+// GET /favorites/:identity/
 export async function get(identity: string): Promise<Favorite[] | Error> {
   return favorites.get.array([identity])
 }
 
-// POST /favorites/:identity with typed body
+// POST /favorites/:identity/ with typed body
 type Post = Omit<Favorite, 'id'>
 
 export async function post(identity: string, body: Post): Promise<Favorite | Error> {
   return favorites.post.value([identity], { body })
 }
 
-// DELETE /favorites/:identity/:id
+// DELETE /favorites/:identity/:id/
 export async function del(identity: string, id: string): Promise<Favorite | Error> {
   return favorites.delete.value([identity, id])
 }
