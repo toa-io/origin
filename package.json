@@ -5,14 +5,11 @@
     "access": "public"
   },
   "description": "Toa Origin",
-  "homepage": "git@github.com:toa-io/origin.git#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:toa-io/origin.git"
+    "url": "git+ssh://git@github.com/toa-io/origin.git"
   },
-  "bugs": {
-    "url": "git@github.com:toa-io/origin.git/issues"
-  },
+  "homepage": "https://github.com/toa-io/origin#readme",
   "main": "transpiled/index.js",
   "types": "transpiled/index.d.ts",
   "peerDependencies": {
@@ -27,7 +24,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "prepublishOnly": "rm -rf transpiled && tsc",
+    "prepublishOnly": "rm -rf transpiled tsconfig.tsbuildinfo && tsc",
     "lint": "eslint .",
     "format": "eslint . --fix",
     "test": "node --test && npm run lint"
