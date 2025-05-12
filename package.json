@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Toa Exposition client",
+  "description": "Toa Origin",
   "homepage": "git@github.com:toa-io/origin.git#readme",
   "repository": {
     "type": "git",

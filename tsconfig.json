@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./transpiled",
+    "rootDir": "./source",
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "ESNext",
@@ -15,7 +16,7 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": [
-    "**/transpiled"
+  "include": [
+    "source/**/*"
   ]
 }

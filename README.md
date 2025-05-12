@@ -1,3 +1,3 @@
-# Toa Exposition client
+# Toa Origin
 
-TODO: Add package description here
+[Exposition](https://github.com/toa-io/toa/tree/dev/extensions/exposition) Client
