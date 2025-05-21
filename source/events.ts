@@ -14,7 +14,7 @@ export interface Events extends Record<string | symbol, unknown> {
 
   response: {
     id: string
-    status: number
+    response: Response
     duration: number
   }
 }

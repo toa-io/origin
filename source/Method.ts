@@ -60,7 +60,7 @@ export class Method<Entity = never> {
     const entry = chunk.value as OctetsEntry
     const emitter = mitt<Events>()
 
-    void (async() => {
+    void (async () => {
       for await (const part of generator) {
         const workflow = part as WorkflowStep
 

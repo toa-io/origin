@@ -55,12 +55,13 @@ export async function request<T = unknown>(
   const id =
     typeof window !== 'undefined' && (window.crypto.randomUUID?.() ?? Math.random().toString())
 
-  if (id) events.emit('request', { id, path, options })
+  if (id)
+    events.emit('request', { id, path, options })
 
   const response = await _fetch(settings.origin + path, options)
 
   if (id)
-    events.emit('response', { id, status: response.status, duration: performance.now() - start })
+    events.emit('response', { id, response, duration: performance.now() - start })
 
   if (!response.ok) return await fail(response)
   else return await ok<T>(response)
