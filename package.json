@@ -17,14 +17,15 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.17",
-    "eslint": "^9.26.0",
+    "eslint": "^9.27.0",
     "eslint-plugin-import": "^2.31.0",
     "husky": "^9.1.7",
     "neostandard": "^0.12.1"
   },
   "scripts": {
     "prepare": "husky",
-    "prepublishOnly": "rm -rf transpiled tsconfig.tsbuildinfo && tsc",
+    "prepublishOnly": "npm run transpile",
+    "transpile": "rm -rf transpiled tsconfig.tsbuildinfo && tsc",
     "lint": "eslint .",
     "format": "eslint . --fix",
     "test": "node --test && npm run lint"
