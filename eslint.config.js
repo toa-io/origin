@@ -15,19 +15,24 @@ module.exports = [
   },
   {
     rules: {
+      'no-void': ['error', { allowAsStatement: true }],
       curly: ['error', 'multi'],
-      '@stylistic/space-before-function-paren': ['error', 'never'],
-      'padding-line-between-statements': [
+      '@stylistic/space-before-function-paren': ['error', {
+        asyncArrow: 'always',
+        named: 'never',
+        anonymous: 'never'
+      }],
+      '@stylistic/padding-line-between-statements': [
         'error',
         {
           blankLine: 'always',
-          prev: ['block-like', 'if'],
+          prev: ['block-like', 'if', 'multiline-expression'],
           next: '*'
         },
         {
           blankLine: 'always',
           prev: '*',
-          next: ['block-like', 'if']
+          next: ['block-like', 'if', 'multiline-expression']
         },
         {
           blankLine: 'always',
@@ -56,7 +61,7 @@ module.exports = [
         }
       ],
       'import/order': ['error', {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'type'],
+        groups: ['builtin', 'external', 'internal', 'unknown', 'parent', 'sibling', 'index', 'type'],
         alphabetize: {
           order: 'asc'
         }
@@ -66,7 +71,6 @@ module.exports = [
   {
     files: ['**/*.ts'],
     rules: {
-      'no-void': ['error', { allowAsStatement: true }],
       '@typescript-eslint/consistent-type-imports': 'error'
     }
   },
