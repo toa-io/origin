@@ -1,12 +1,8 @@
+import { settings } from './connect'
 import { events } from './events'
 import { fail } from './fail'
 import { ok } from './ok'
-import { settings } from './settings'
 import type { Failure } from './Failure'
-
-const delay = settings.delay
-
-if (delay) console.warn(`API delay is enabled (${delay}ms)`)
 
 let challenge: string | null = null
 
@@ -27,8 +23,8 @@ export async function request<T = unknown>(
   options.headers ??= {}
   options.headers['accept'] ??= 'application/json'
 
-  if (delay)
-    options.headers['sleep'] = Math.round((Math.random() * delay) / 2 + delay / 2).toString()
+  if (settings.delay)
+    options.headers['sleep'] = Math.round((Math.random() * settings.delay) / 2 + settings.delay / 2).toString()
 
   const authentication = options.credentials === 'include'
 
