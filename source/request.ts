@@ -32,7 +32,7 @@ export async function request<T = unknown>(
     if (options.body instanceof File || options.body instanceof ReadableStream) {
       options.method ??= 'POST'
       options.duplex = 'half'
-      options.headers['content-type'] ??= 'application/octet-stream'
+      options.headers['content-type'] ??= (options.body as File).type ?? 'application/octet-stream'
     } else {
       options.body = JSON.stringify(options.body)
       options.headers['content-type'] ??= 'application/json'
