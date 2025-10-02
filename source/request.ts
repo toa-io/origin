@@ -1,4 +1,3 @@
-import { settings } from './connect'
 import { events } from './events'
 import { fail } from './fail'
 import { ok } from './ok'
@@ -16,10 +15,24 @@ export function use(fetcher: typeof fetch) {
   _fetch = fetcher
 }
 
+interface Settings {
+  origin: string
+  delay?: number
+}
+
+const settings: Partial<Settings> = {} as const
+
+export function connect(values: Settings) {
+  Object.assign(settings, values)
+}
+
 export async function request<T = unknown>(
   path: string,
   options: Options = {}
 ): Promise<T | Failure> {
+  if (settings.origin === undefined)
+    throw new Error('Origin not connected')
+
   options.headers ??= {}
   options.headers['accept'] ??= 'application/json'
 
