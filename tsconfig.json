@@ -1,10 +1,11 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "outDir": "./transpiled",
     "rootDir": "./source",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "ESNext",
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "target": "esnext",
     "sourceMap": true,
     "declaration": true,
     "esModuleInterop": true,
