@@ -35,7 +35,8 @@
     "transpile": "rm -rf transpiled tsconfig.tsbuildinfo && tsc",
     "lint": "eslint .",
     "format": "eslint . --fix",
-    "test": "npm run lint && node --test"
+    "test": "npm run lint && node --test",
+    "ci": "rm -rf node_modules && rm -rf package-lock.json && npm i"
   },
   "dependencies": {
     "error-value": "^0.4.4",
