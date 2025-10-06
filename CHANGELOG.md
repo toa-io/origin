@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/toa-io/origin/compare/v1.1.0...v1.2.0) (2025-10-06)
+
+
+### Features
+
+* change type to `module` ([5b70fd5](https://github.com/toa-io/origin/commit/5b70fd5cb7cfacefcb05ea4d0b8fa7f0c5b58d9e))
+
 # [1.1.0](https://github.com/toa-io/origin/compare/v1.0.0...v1.1.0) (2025-10-06)
 
 
