@@ -41,7 +41,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "build": "tsup source/index.ts",
+    "build": "tsup source/index.ts --dts --sourcemap --format esm,cjs --out-dir dist --clean",
     "prepublishOnly": "npm run build",
     "lint": "eslint .",
     "format": "eslint . --fix",
