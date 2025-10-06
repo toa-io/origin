@@ -1,15 +1,14 @@
+import type { Err } from 'error-value'
+
 export interface OctetsEntry {
   id: string
 }
 
-export interface WorkflowStep<K = string, T = unknown> {
+export interface WorkflowStep<K extends string = string, T = unknown, E extends Err = Err> {
   step: K
   status: 'completed' | 'exception'
   output?: T
-  error: WorkflowError
+  error: E
 }
 
-interface WorkflowError {
-  code: string
-  message?: string
-}
+export type Faulty<T extends Record<string, unknown>> = Record<keyof T, T[keyof T] | Err>

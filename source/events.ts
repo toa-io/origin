@@ -1,20 +1,3 @@
-import mitt from 'mitt'
-import type { Options } from './request'
+type Events = { challenge: string, error: { code: number, body: unknown } }
 
-export const events = mitt<Events>()
-
-export interface Events extends Record<string | symbol, unknown> {
-  challenge: string
-
-  request: {
-    id: string
-    path: string
-    options: Options
-  }
-
-  response: {
-    id: string
-    response: Response
-    duration: number
-  }
-}
+export { Events }
