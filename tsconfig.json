@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "outDir": "./transpiled",
     "rootDir": "./source",
+    "outDir": "./transpiled",
     "sourceMap": true,
     "declaration": true,
     "esModuleInterop": true,
