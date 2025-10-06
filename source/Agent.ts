@@ -18,7 +18,7 @@ class Agent {
     this.events = options.events
   }
 
-  public async json<T, E extends GenericError = GenericError>(path: string, init?: Init): Promise<T | E> {
+  public async json<T, E extends GenericError = GenericError>(path: string, init?: RequestOptions): Promise<T | E> {
     const options = this.setup(init)
     const response = await this.request(path, options)
 
@@ -35,7 +35,7 @@ class Agent {
     }
   }
 
-  public async multipart<T = unknown>(path: string, init?: Init): Promise<AsyncGenerator<T, void, undefined> | GenericError> {
+  public async multipart<T = unknown>(path: string, init?: RequestOptions): Promise<AsyncGenerator<T, void, undefined> | GenericError> {
     const options = this.setup(init)
     const response = await this.request(path, options)
 
@@ -61,7 +61,7 @@ class Agent {
   public async octets<
     T extends Record<string, unknown> = Record<string, unknown>,
     E extends GenericError = GenericError
-  >(path: string, init?: Init): Promise<[OctetsEntry, Emitter<Faulty<T>>] | E> {
+  >(path: string, init?: RequestOptions): Promise<[OctetsEntry, Emitter<Faulty<T>>] | E> {
     const generator = await this.multipart<OctetsEntry | WorkflowStep>(path, init)
 
     if (generator instanceof Error) return generator as E
@@ -94,7 +94,7 @@ class Agent {
     this.fetch = fetch
   }
 
-  private setup(init?: Init): InitWithHeaders {
+  private setup(init?: RequestOptions): InitWithHeaders {
     init ??= {}
     init.headers ??= {}
     init.headers['accept'] ??= 'application/json'
@@ -120,7 +120,7 @@ class Agent {
     return init as InitWithHeaders
   }
 
-  private async request(path: string, init: Init): Promise<Response> {
+  private async request(path: string, init: RequestOptions): Promise<Response> {
     const url = new URL(path, this.origin)
     const response = await this.fetch(url.href, init)
 
@@ -140,17 +140,17 @@ interface Options {
   events: Emitter<Events>
 }
 
-interface Init extends Omit<RequestInit, 'path' | 'headers'> {
+interface RequestOptions extends Omit<RequestInit, 'path' | 'headers'> {
   duplex?: 'half'
   body?: any
   headers?: Record<string, string>
 }
 
-interface InitWithHeaders extends Init {
+interface InitWithHeaders extends RequestOptions {
   headers: Record<string, string>
 }
 
 type Fetch = typeof fetch
 
 export { Agent }
-export type { Init }
+export type { RequestOptions }
