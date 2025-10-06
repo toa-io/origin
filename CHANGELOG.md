@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/toa-io/origin/compare/v1.2.2...v1.3.0) (2025-10-06)
+
+
+### Features
+
+* add type `module` ([ac98595](https://github.com/toa-io/origin/commit/ac985959aeb940a4a316e526625ab4b5e984608d))
+
 ## [1.2.2](https://github.com/toa-io/origin/compare/v1.2.1...v1.2.2) (2025-10-06)
 
 
