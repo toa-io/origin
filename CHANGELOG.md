@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/toa-io/origin/compare/v1.3.0...v1.3.1) (2025-10-06)
+
+
+### Bug Fixes
+
+* rebuild package-lock ([3b3b253](https://github.com/toa-io/origin/commit/3b3b2537ee92d51f4d9e2d9804882d3ac78ebe3a))
+
 # [1.3.0](https://github.com/toa-io/origin/compare/v1.2.2...v1.3.0) (2025-10-06)
 
 
