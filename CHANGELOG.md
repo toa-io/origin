@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/toa-io/origin/compare/v1.3.4...v1.4.0) (2025-10-06)
+
+
+### Features
+
+* export RequestOptions type ([a848529](https://github.com/toa-io/origin/commit/a848529d84fb39b7e147de8e18b5038a03b39b80))
+
 ## [1.3.4](https://github.com/toa-io/origin/compare/v1.3.3...v1.3.4) (2025-10-06)
 
 
