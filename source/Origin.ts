@@ -1,7 +1,7 @@
 import mitt from 'mitt'
 import { Agent } from './Agent'
 import { Resource } from './Resource'
-import type { Events } from './Events'
+import type { Events } from './Evt'
 import type { Emitter } from 'mitt'
 
 /** Resoruce factory */

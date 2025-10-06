@@ -2,7 +2,7 @@ import { Err } from 'error-value'
 import { meros } from 'meros/browser'
 import mitt from 'mitt'
 import type { GenericError } from './Error'
-import type { Events } from './Events'
+import type { Events } from './Evt'
 import type { Faulty, OctetsEntry, WorkflowStep } from './Octets'
 import type { Emitter } from 'mitt'
 
