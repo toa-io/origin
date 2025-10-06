@@ -3,19 +3,17 @@
   "compilerOptions": {
     "outDir": "./transpiled",
     "rootDir": "./source",
-    "moduleResolution": "bundler",
-    "module": "esnext",
-    "target": "esnext",
     "sourceMap": true,
     "declaration": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "incremental": true,
     "strict": true,
-    "experimentalDecorators": true,
     "noImplicitOverride": true,
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true
+    "module": "ESNext",
+    "target": "ES2022",
+    "moduleResolution": "node"
   },
   "include": [
     "source/**/*"
