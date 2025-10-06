@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/toa-io/origin/compare/v1.2.0...v1.2.1) (2025-10-06)
+
+
+### Bug Fixes
+
+* update tsconfig ([3a69b4a](https://github.com/toa-io/origin/commit/3a69b4a873675a1214d01b1c119df624a6978fd5))
+
 # [1.2.0](https://github.com/toa-io/origin/compare/v1.1.0...v1.2.0) (2025-10-06)
 
 
