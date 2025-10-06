@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/toa-io/origin/compare/v1.3.1...v1.3.2) (2025-10-06)
+
+
+### Bug Fixes
+
+* add `tsup` ([313239a](https://github.com/toa-io/origin/commit/313239ac40799a450c304d4e2e72959baf7aaf05))
+
 ## [1.3.1](https://github.com/toa-io/origin/compare/v1.3.0...v1.3.1) (2025-10-06)
 
 
