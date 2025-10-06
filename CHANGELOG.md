@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/toa-io/origin/compare/v1.0.0...v1.1.0) (2025-10-06)
+
+
+### Features
+
+* remove singleton ([df8e18a](https://github.com/toa-io/origin/commit/df8e18a4e9a5c065e9ea33e20e6437374c3bebb3))
+
 # 1.0.0 (2025-10-05)
 
 
