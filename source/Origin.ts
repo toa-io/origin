@@ -1,6 +1,7 @@
 import mitt from 'mitt'
 import { Agent } from './Agent'
 import { Resource } from './Resource'
+import type { RequestOptions } from './Agent'
 import type { Events } from './Events'
 import type { Emitter } from 'mitt'
 
@@ -18,10 +19,11 @@ class Origin {
     })
   }
 
-  public resource<T = unknown>(path: string) {
+  public resource<T = unknown>(path: string, init?: Partial<RequestOptions>) {
     return new Resource<T>({
       agent: this.agent,
       path,
+      init,
     })
   }
 
