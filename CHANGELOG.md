@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/toa-io/origin/compare/v1.4.0...v1.5.0) (2025-10-08)
+
+
+### Features
+
+* add resource partial init ([69e7349](https://github.com/toa-io/origin/commit/69e73496cb2768dfbf3ad35e5c5ef0e0d9721554))
+
 # [1.4.0](https://github.com/toa-io/origin/compare/v1.3.4...v1.4.0) (2025-10-06)
 
 
