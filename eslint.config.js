@@ -23,6 +23,7 @@ export default [
         named: 'never',
         anonymous: 'never'
       }],
+      'arrow-parens': ['error', 'always'],
       '@stylistic/padding-line-between-statements': [
         'error',
         {

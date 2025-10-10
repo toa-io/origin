@@ -1,3 +1,5 @@
+import { formats } from './criteria'
+
 function query(params?: URLSearchParams, options?: Options): string {
   if (params === undefined) return ''
 
@@ -9,8 +11,14 @@ function query(params?: URLSearchParams, options?: Options): string {
 
     if (SEPARATE.includes(name) || options?.separate?.includes(name) === true)
       parts.push(`${name}=${value}`)
-    else
-      criteria.push(`${name}==${value}`)
+    else {
+      const format = formats.find((format) => format.test(value))
+
+      if (format === undefined)
+        criteria.push(`${name}==${value}`)
+      else
+        criteria.push(...format.format(name, value))
+    }
   }
 
   if (criteria.length > 0)

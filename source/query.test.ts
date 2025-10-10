@@ -57,3 +57,14 @@ it('should map parameters', () => {
 
   assert.equal(result, '?criteria=bar==bar;baz==baz&qux=qux&limit=10')
 })
+
+it('should parse ranges', () => {
+  const params = new URLSearchParams()
+
+  params.set('foo', '[10..20]')
+  params.set('bar', '[10..20)')
+
+  const result = query(params)
+
+  assert.equal(result, '?criteria=foo>=10;foo<=20;bar>=10;bar<20')
+})
