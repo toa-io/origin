@@ -1,4 +1,5 @@
 export { connect } from './Origin'
+export { query } from './query'
 export type { GenericError } from './Error'
 export type { OctetsEntry, WorkflowStep } from './Octets'
 export type { RequestOptions } from './Agent'
