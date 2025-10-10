@@ -4,11 +4,14 @@ function query(params?: URLSearchParams, options?: Options): string {
   const parts: string[] = []
   const criteria: string[] = []
 
-  for (const [key, value] of params.entries())
-    if (SEPARATE.includes(key) || options?.separate?.includes(key) === true)
-      parts.push(`${key}=${value}`)
+  for (const [key, value] of params.entries()) {
+    const name = options?.map?.[key] ?? key
+
+    if (SEPARATE.includes(name) || options?.separate?.includes(name) === true)
+      parts.push(`${name}=${value}`)
     else
-      criteria.push(`${key}==${value}`)
+      criteria.push(`${name}==${value}`)
+  }
 
   if (criteria.length > 0)
     parts.unshift(`criteria=${criteria.join(';')}`)
@@ -22,6 +25,7 @@ const SEPARATE: string[] = ['omit', 'limit', 'search'] as const
 
 interface Options {
   separate?: string[]
+  map?: Record<string, string>
 }
 
 export { query }

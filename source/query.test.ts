@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { it } from 'node:test'
-import { query } from './query.ts'
+import { query } from './query'
 
 it('should build criteria', () => {
   const params = new URLSearchParams()
@@ -43,4 +43,17 @@ it('should separate specified parameters', () => {
   const result = query(params, { separate: ['baz'] })
 
   assert.equal(result, '?criteria=foo==bar&baz=qux')
+})
+
+it('should map parameters', () => {
+  const params = new URLSearchParams()
+
+  params.set('foo', 'bar')
+  params.set('baz', 'baz')
+  params.set('quz', 'qux')
+  params.set('max', '10')
+
+  const result = query(params, { separate: ['qux'], map: { foo: 'bar', quz: 'qux', max: 'limit' } })
+
+  assert.equal(result, '?criteria=bar==bar;baz==baz&qux=qux&limit=10')
 })
