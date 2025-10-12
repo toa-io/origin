@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/toa-io/origin/compare/v1.5.0...v1.6.0) (2025-10-12)
+
+
+### Features
+
+* add `query` ([7927200](https://github.com/toa-io/origin/commit/7927200c6d043a7cc24454d2b6b7583675a7ceac))
+* add `range` query format ([fa81a74](https://github.com/toa-io/origin/commit/fa81a74e82bc82be984fc90271d64acba6cf383d))
+* add parameters mapping ([d495914](https://github.com/toa-io/origin/commit/d4959142f82ae945a6ea3a0a0c50c33f3fef0040))
+
 # [1.5.0](https://github.com/toa-io/origin/compare/v1.4.0...v1.5.0) (2025-10-08)
 
 
