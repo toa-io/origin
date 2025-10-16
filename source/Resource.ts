@@ -32,6 +32,10 @@ class Resource<T = unknown, E extends GenericError = GenericError> {
     const base = new URL(this.path, 'uri://void')
     const url = new URL(rel, base)
 
+    // Allows to use resource.json(id) instead of resource.json(id + '/')
+    if (!url.pathname.endsWith('/'))
+      url.pathname += '/'
+
     return url.pathname + url.search
   }
 }
