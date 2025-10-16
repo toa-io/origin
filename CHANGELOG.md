@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/toa-io/origin/compare/v1.6.0...v1.7.0) (2025-10-16)
+
+
+### Features
+
+* remove trailing slash autocompletion ([80b9b70](https://github.com/toa-io/origin/commit/80b9b70c09d27cbafc1ed1c670ca26987a6b4c87))
+
 # [1.6.0](https://github.com/toa-io/origin/compare/v1.5.0...v1.6.0) (2025-10-12)
 
 
