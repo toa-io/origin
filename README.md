@@ -8,11 +8,11 @@
 import { connect } from '@toa.io/origin'
 import type { MyEntity } from './MyEntity'
 
-const origin = connect({ origin: 'https://my-origin.com' })
+const origin = connect('https://my-origin.com')
 const favorites = origin.resource<Favorite>('/favorites/')
 
 export async function get(): Promise<Favorite[] | Error> {
-  return favorites.json<Favorite[]>('', { method: 'GET' })
+  return favorites.json<Favorite[]>({ method: 'GET' })
 }
 
 // POST /favorites/:identity/ with typed body

@@ -36,7 +36,10 @@ class Origin {
   }
 }
 
-function connect(options: Options) {
+function connect(options: Options | string) {
+  if (typeof options === 'string')
+    options = { origin: options }
+
   return new Origin(options)
 }
 
