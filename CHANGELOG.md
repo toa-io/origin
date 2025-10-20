@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/toa-io/origin/compare/v1.9.0...v1.10.0) (2025-10-20)
+
+
+### Features
+
+* simplify `connect` signature ([9a49af4](https://github.com/toa-io/origin/commit/9a49af43b04eab62d0abe6abb91049c12a73b1d3))
+
 # [1.9.0](https://github.com/toa-io/origin/compare/v1.8.0...v1.9.0) (2025-10-20)
 
 
