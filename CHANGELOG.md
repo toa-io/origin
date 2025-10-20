@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/toa-io/origin/compare/v1.8.0...v1.9.0) (2025-10-20)
+
+
+### Features
+
+* make `rel` optional ([2e116e5](https://github.com/toa-io/origin/commit/2e116e55e6fdcef409d139f70c2dfb9e254106d7))
+
 # [1.8.0](https://github.com/toa-io/origin/compare/v1.7.0...v1.8.0) (2025-10-16)
 
 
