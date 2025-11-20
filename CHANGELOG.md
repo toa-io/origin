@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/toa-io/origin/compare/v1.10.1...v1.11.0) (2025-11-20)
+
+
+### Features
+
+* export `Resource` type ([3b1825e](https://github.com/toa-io/origin/commit/3b1825e6aa0f6e5fe7d0eec25a2459699b285753))
+
 ## [1.10.1](https://github.com/toa-io/origin/compare/v1.10.0...v1.10.1) (2025-11-20)
 
 
