@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/toa-io/origin/compare/v1.10.0...v1.10.1) (2025-11-20)
+
+
+### Bug Fixes
+
+* export `Origin` type ([794cb73](https://github.com/toa-io/origin/commit/794cb735b488609537ff6cad8194c6a9226d9977))
+
 # [1.10.0](https://github.com/toa-io/origin/compare/v1.9.0...v1.10.0) (2025-10-20)
 
 
