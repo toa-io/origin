@@ -49,4 +49,4 @@ interface Options {
 
 type Fetch = typeof fetch
 
-export { connect }
+export { connect, type Origin }

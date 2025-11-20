@@ -1,4 +1,4 @@
-export { connect } from './Origin'
+export { connect, type Origin } from './Origin'
 export { query } from './query'
 export type { GenericError } from './Error'
 export type { OctetsEntry, WorkflowStep } from './Octets'
