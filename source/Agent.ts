@@ -74,8 +74,10 @@ class Agent {
       for await (const part of (generator as AsyncGenerator<WorkflowStep>)) {
         const payload =
           part.status === 'completed'
-            ? part.output
-            : new Err(part.error?.code ?? 'UNKNOWN', part.error?.message)
+            ? part.error
+              ? new Err(part.error.code ?? 'UNKNOWN', part.error.message)
+              : part.output
+            : new Err('EXCEPTION')
 
         emitter.emit(part.step, payload as T[typeof part.step])
       }
