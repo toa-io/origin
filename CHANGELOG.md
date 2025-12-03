@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/toa-io/origin/compare/v1.11.0...v1.11.1) (2025-12-03)
+
+
+### Bug Fixes
+
+* emit octets workflow errors ([c11b86c](https://github.com/toa-io/origin/commit/c11b86ce18b5fc4895691e885c3ed85eaf5f1896))
+
 # [1.11.0](https://github.com/toa-io/origin/compare/v1.10.1...v1.11.0) (2025-11-20)
 
 
