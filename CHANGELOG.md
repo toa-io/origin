@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/toa-io/origin/compare/v1.11.1...v1.12.0) (2025-12-05)
+
+
+### Features
+
+* add `sleep` ([2e79fdc](https://github.com/toa-io/origin/commit/2e79fdcf211653bfdfd06ef53ef134878eebb3e7))
+
 ## [1.11.1](https://github.com/toa-io/origin/compare/v1.11.0...v1.11.1) (2025-12-03)
 
 
