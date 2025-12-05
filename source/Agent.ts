@@ -9,6 +9,7 @@ import type { Emitter } from 'mitt'
 class Agent {
   private readonly origin: string
   private readonly events: Emitter<Events>
+  private sleep?: string
   private fetch: Fetch = fetch
 
   private challenge: string | null = null
@@ -16,6 +17,9 @@ class Agent {
   constructor(options: Options) {
     this.origin = options.origin
     this.events = options.events
+
+    if (options.sleep !== undefined)
+      this.sleep = JSON.stringify(options.sleep)
   }
 
   public async json<T, E extends GenericError = GenericError>(path: string, init?: RequestOptions): Promise<T | E> {
@@ -101,6 +105,9 @@ class Agent {
     init.headers ??= {}
     init.headers['accept'] ??= 'application/json'
 
+    if (this.sleep !== undefined)
+      init.headers['sleep'] = this.sleep
+
     if (init.credentials === 'include' && init.headers['authorization'] === undefined) {
       if (this.challenge === null)
         throw new Error('Credentials must be set before sending authenticated request')
@@ -140,6 +147,7 @@ class Agent {
 interface Options {
   origin: string
   events: Emitter<Events>
+  sleep?: [number, number]
 }
 
 interface RequestOptions extends Omit<RequestInit, 'path' | 'headers'> {

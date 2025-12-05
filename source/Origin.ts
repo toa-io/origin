@@ -16,6 +16,7 @@ class Origin {
     this.agent = new Agent({
       origin: options.origin,
       events: this.events,
+      sleep: options.sleep,
     })
   }
 
@@ -45,6 +46,7 @@ function connect(options: Options | string) {
 
 interface Options {
   origin: string
+  sleep?: [number, number]
 }
 
 type Fetch = typeof fetch
