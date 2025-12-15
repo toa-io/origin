@@ -30,9 +30,11 @@ class Agent {
       ? await response.json()
       : await response.text()
 
-    if (response.ok)
+    if (response.ok) {
+      this.events.emit('response', { status: response.status, headers: response.headers })
+
       return body as T
-    else {
+    } else {
       this.events.emit('error', { code: response.status, body })
 
       return new Err(response.status, body) as E
