@@ -7,7 +7,7 @@
   "description": "Toa Origin",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/toa-io/origin.git"
+    "url": "https://github.com/toa-io/origin.git"
   },
   "homepage": "https://github.com/toa-io/origin#readme",
   "type": "module",
