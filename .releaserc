@@ -27,9 +27,10 @@
     ],
     [
       "@semantic-release/github",
-      {
-        "owner": "toa-io"
-      }
+      {  
+        "owner": "toa-io",  
+        "repo": "origin"  
+      }   
     ]
   ]
 }
