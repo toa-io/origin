@@ -26,7 +26,10 @@
       }
     ],
     [
-      "@semantic-release/github"
+      "@semantic-release/github",
+      {
+        "owner": "temich"
+      }
     ]
   ]
 }
