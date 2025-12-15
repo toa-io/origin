@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/toa-io/origin/compare/v1.12.0...v1.13.0) (2025-12-15)
+
+
+### Features
+
+* add multipart method ([6a464df](https://github.com/toa-io/origin/commit/6a464dfad9cc029b10d0af74dac00956772c23cc))
+
 # [1.12.0](https://github.com/toa-io/origin/compare/v1.11.1...v1.12.0) (2025-12-05)
 
 
