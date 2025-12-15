@@ -17,19 +17,24 @@ class Resource<T = unknown, E extends GenericError = GenericError> {
   public async json<R = T, F extends E = E>(init?: RequestOptions): Promise<R | F>
   public async json<R = T, F extends E = E>(rel: string, init?: RequestOptions): Promise<R | F>
   public async json<R = T, F extends E = E>(relOrInit?: string | RequestOptions, init?: RequestOptions): Promise<R | F> {
-    const rel = typeof relOrInit === 'string' ? relOrInit : ''
-
-    init = typeof relOrInit === 'string' ? init : relOrInit
-
-    const abs = this.abs(rel)
-    const options = Object.assign({}, this.init, init)
-
-    return await this.agent.json<R, F>(abs, options)
+    return await this.request<R, F>('json', relOrInit, init)
   }
 
-  public async octets<T extends Record<string, unknown> = Record<string, unknown>, F extends E = E>(init?: RequestOptions): Promise<[OctetsEntry, Emitter<Faulty<T>>] | F>
-  public async octets<T extends Record<string, unknown> = Record<string, unknown>, F extends E = E>(rel: string, init?: RequestOptions): Promise<[OctetsEntry, Emitter<Faulty<T>>] | F>
-  public async octets<T extends Record<string, unknown> = Record<string, unknown>, F extends E = E>(relOrInit?: string | RequestOptions, init?: RequestOptions): Promise<[OctetsEntry, Emitter<Faulty<T>>] | F> {
+  public async octets<R extends Record<string, unknown> = Record<string, unknown>, F extends E = E>(init?: RequestOptions): Promise<[OctetsEntry, Emitter<Faulty<R>>] | F>
+  public async octets<R extends Record<string, unknown> = Record<string, unknown>, F extends E = E>(rel: string, init?: RequestOptions): Promise<[OctetsEntry, Emitter<Faulty<R>>] | F>
+  public async octets<R extends Record<string, unknown> = Record<string, unknown>, F extends E = E>(relOrInit?: string | RequestOptions, init?: RequestOptions): Promise<[OctetsEntry, Emitter<Faulty<R>>] | F> {
+    return await this.request<R, F>('octets', relOrInit, init)
+  }
+
+  // public async multipart<R = unknown, F extends E = E>(init?: RequestOptions): Promise<AsyncGenerator<R, void, undefined> | F>
+  // public async multipart<R = unknown, F extends E = E>(rel: string, init?: RequestOptions): Promise<AsyncGenerator<R, void, undefined> | F>
+  // public async multipart<R = unknown, F extends E = E>(relOrInit?: string | RequestOptions, init?: RequestOptions): Promise<AsyncGenerator<R, void, undefined> | F> {
+  //   return await this.request<R, F>('multipart', relOrInit, init)
+  // }
+
+  private async request<R, F extends E>(method: 'json', relOrInit?: string | RequestOptions, init?: RequestOptions): Promise<R | F>
+  private async request<R extends Record<string, unknown>, F extends E = E>(method: 'octets', relOrInit?: string | RequestOptions, init?: RequestOptions): Promise<[OctetsEntry, Emitter<Faulty<R>>] | F>
+  private async request<R extends T, F extends E = E>(method: 'json' | 'octets' | 'multipart', relOrInit?: string | RequestOptions, init?: RequestOptions) {
     const rel = typeof relOrInit === 'string' ? relOrInit : ''
 
     init = typeof relOrInit === 'string' ? init : relOrInit
@@ -37,7 +42,11 @@ class Resource<T = unknown, E extends GenericError = GenericError> {
     const abs = this.abs(rel)
     const options = Object.assign({}, this.init, init)
 
-    return await this.agent.octets<T, F>(abs, options)
+    if (method === 'json')
+      return await this.agent.json<R, F>(abs, options)
+    else if (method === 'octets')
+      return await this.agent.octets<Record<string, unknown>, F>(abs, options)
+    else throw new Error(`Invalid method: ${method}`)
   }
 
   private abs(rel: string): string {
