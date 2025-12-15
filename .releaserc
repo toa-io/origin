@@ -28,7 +28,7 @@
     [
       "@semantic-release/github",
       {
-        "owner": "temich"
+        "owner": "toa-io"
       }
     ]
   ]
