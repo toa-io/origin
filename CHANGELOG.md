@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/toa-io/origin/compare/v1.13.0...v1.14.0) (2025-12-24)
+
+
+### Features
+
+* `POST` with `body` by default ([40b0694](https://github.com/toa-io/origin/commit/40b069479c7309d7e9e604a32a27c757adf2ca62))
+
 # [1.13.0](https://github.com/toa-io/origin/compare/v1.12.0...v1.13.0) (2025-12-15)
 
 
