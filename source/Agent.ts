@@ -118,15 +118,17 @@ class Agent {
       delete init.credentials // no cookies
     }
 
-    if (init.body !== undefined)
+    if (init.body !== undefined) {
+      init.method ??= 'POST'
+
       if (init.body instanceof File || init.body instanceof ReadableStream) {
-        init.method ??= 'POST'
         init.duplex = 'half'
         init.headers['content-type'] ??= (init.body as File).type ?? 'application/octet-stream'
       } else {
         init.body = JSON.stringify(init.body)
         init.headers['content-type'] ??= 'application/json'
       }
+    }
 
     return init as InitWithHeaders
   }

@@ -43,9 +43,6 @@ class Resource<T = unknown, E extends GenericError = GenericError> {
     const abs = this.abs(rel)
     const options = Object.assign({}, this.init, init)
 
-    if (options.body !== undefined && options.method === undefined)
-      options.method = 'POST'
-
     if (method === 'json')
       return await this.agent.json<R, F>(abs, options)
     else if (method === 'octets')
