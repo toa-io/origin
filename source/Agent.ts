@@ -51,10 +51,16 @@ class Agent {
     const generator = await meros(response) as AsyncGenerator<{ body: string }>
     const ack = await generator.next()
 
+    if (options.debug)
+      console.debug('Multipart ACK', { path, body: ack.value.body })
+
     if (JSON.parse(ack.value.body) !== 'ACK') throw new Error('No ACK')
 
     return (async function * () {
       for await (const chunk of generator) {
+        if (options.debug)
+          console.debug('Multipart chunk', { path, body: chunk.body })
+
         const value = JSON.parse(chunk.body)
 
         if (value === 'FIN') return
@@ -77,6 +83,9 @@ class Agent {
     const emitter = mitt<Faulty<T>>()
 
     void (async () => {
+      // workflow results may come within the same frame
+      await new Promise((resolve) => setTimeout(resolve, 0))
+
       for await (const part of (generator as AsyncGenerator<WorkflowStep>)) {
         const payload =
           part.status === 'completed'
@@ -84,6 +93,9 @@ class Agent {
               ? new Err(part.error.code ?? 'UNKNOWN', part.error.message)
               : part.output
             : new Err('EXCEPTION')
+
+        if (init?.debug)
+          console.debug('Emitting octets step', { path, step: part.step, payload })
 
         emitter.emit(part.step, payload as T[typeof part.step])
       }
@@ -158,6 +170,7 @@ interface RequestOptions extends Omit<RequestInit, 'path' | 'headers'> {
   duplex?: 'half'
   body?: any
   headers?: Record<string, string>
+  debug?: boolean
 }
 
 interface InitWithHeaders extends RequestOptions {
