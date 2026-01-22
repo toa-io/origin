@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/toa-io/origin/compare/v1.14.0...v1.15.0) (2026-01-22)
+
+
+### Features
+
+* export `Faulty` ([c702848](https://github.com/toa-io/origin/commit/c7028480e6e562292e632cc9b73a775efa96414c))
+
 # [1.14.0](https://github.com/toa-io/origin/compare/v1.13.0...v1.14.0) (2025-12-24)
 
 
