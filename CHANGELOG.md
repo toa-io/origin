@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/toa-io/origin/compare/v1.15.0...v1.15.1) (2026-01-22)
+
+
+### Bug Fixes
+
+* handle too fast workflow results ([a41367d](https://github.com/toa-io/origin/commit/a41367d609bfab3b3dd31f83c67b5f42b3a6e1fd))
+
 # [1.15.0](https://github.com/toa-io/origin/compare/v1.14.0...v1.15.0) (2026-01-22)
 
 
