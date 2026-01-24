@@ -1,5 +1,6 @@
 export { connect, type Origin } from './Origin'
 export { query } from './query'
+export { meta } from './meta'
 export type { GenericError } from './Error'
 export type { OctetsEntry, WorkflowStep } from './Octets'
 export type { Resource } from './Resource'

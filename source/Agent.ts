@@ -1,6 +1,7 @@
 import { Err } from 'error-value'
 import { meros } from 'meros/browser'
 import mitt from 'mitt'
+import { setMeta } from './meta'
 import type { GenericError } from './Error'
 import type { Events } from './Events'
 import type { Faulty, OctetsEntry, WorkflowStep } from './Octets'
@@ -29,6 +30,9 @@ class Agent {
     const body = response.headers.get('content-type') === 'application/json'
       ? await response.json()
       : await response.text()
+
+    if (typeof body === 'object' && body !== null)
+      setMeta(body, { status: response.status, headers: response.headers })
 
     if (response.ok) {
       this.events.emit('response', { status: response.status, headers: response.headers })
