@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/toa-io/origin/compare/v1.15.1...v1.16.0) (2026-01-24)
+
+
+### Features
+
+* add `meta` ([c83153f](https://github.com/toa-io/origin/commit/c83153fd2edf9792e52e608671d959bd4b252278))
+
 ## [1.15.1](https://github.com/toa-io/origin/compare/v1.15.0...v1.15.1) (2026-01-22)
 
 
