@@ -16,5 +16,10 @@ export function meta(object: Object): Meta | null {
 }
 
 export function setMeta(object: Candidate, meta: Meta) {
-  object[KEY] = meta
+  Object.defineProperty(object, KEY, {
+    value: meta,
+    writable: false,
+    enumerable: false,
+    configurable: false,
+  })
 }
