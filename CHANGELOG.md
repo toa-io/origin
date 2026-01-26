@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/toa-io/origin/compare/v1.16.0...v1.16.1) (2026-01-26)
+
+
+### Bug Fixes
+
+* set meta symbol non-enumareble ([64ba595](https://github.com/toa-io/origin/commit/64ba5952e4b718a9947ce90938f206f233b6208a))
+
 # [1.16.0](https://github.com/toa-io/origin/compare/v1.15.1...v1.16.0) (2026-01-24)
 
 
