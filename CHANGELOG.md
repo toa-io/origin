@@ -1,3 +1,10 @@
+## [1.16.2](https://github.com/toa-io/origin/compare/v1.16.1...v1.16.2) (2026-02-01)
+
+
+### Bug Fixes
+
+* fix peer dep ([0fc3aed](https://github.com/toa-io/origin/commit/0fc3aeda075484f41ca38f9eabc4ac820c4410f0))
+
 ## [1.16.1](https://github.com/toa-io/origin/compare/v1.16.0...v1.16.1) (2026-01-26)
 
 
