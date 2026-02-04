@@ -53,7 +53,7 @@ class Resource<T = unknown, E extends GenericError = GenericError> {
   }
 
   private abs(rel: string): string {
-    const base = new URL(this.path, 'https://void') // android webview requires http(s) wtf
+    const base = new URL(this.path, 'https://void') // android webview violates spec
     const url = new URL(rel, base)
 
     // Allows to use resource.json(id) instead of resource.json(id + '/')
