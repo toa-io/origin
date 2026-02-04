@@ -1,3 +1,10 @@
+## [1.16.3](https://github.com/toa-io/origin/compare/v1.16.2...v1.16.3) (2026-02-04)
+
+
+### Bug Fixes
+
+* fix `Invalid URL` inside android webview ([0359f6b](https://github.com/toa-io/origin/commit/0359f6b7232667e42ea496786a207aef9ef89348))
+
 ## [1.16.2](https://github.com/toa-io/origin/compare/v1.16.1...v1.16.2) (2026-02-01)
 
 
