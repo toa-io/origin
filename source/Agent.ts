@@ -11,7 +11,7 @@ class Agent {
   private readonly origin: string
   private readonly events: Emitter<Events>
   private sleep?: string
-  private fetch: Fetch = fetch
+  private fetch: Fetch = fetch.bind(globalThis)
 
   private challenge: string | null = null
 
