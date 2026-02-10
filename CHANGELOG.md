@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/toa-io/origin/compare/v1.16.3...v1.17.0) (2026-02-10)
+
+
+### Features
+
+* bind `fetch` to `globalThis` ([838026a](https://github.com/toa-io/origin/commit/838026a27c6a4fa411c8735348c5ac5c6c27dad0))
+
 ## [1.16.3](https://github.com/toa-io/origin/compare/v1.16.2...v1.16.3) (2026-02-04)
 
 
