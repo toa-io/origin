@@ -50,7 +50,7 @@ class Agent {
     const response = await this.request(path, options)
 
     if (!response.ok)
-      return new Err(response.status, await response.json())
+      return new Err(response.status, { body: await response.text() })
 
     const generator = await meros(response) as AsyncGenerator<{ body: string }>
     const ack = await generator.next()
