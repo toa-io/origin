@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/toa-io/origin/compare/v1.17.0...v1.17.1) (2026-02-10)
+
+
+### Bug Fixes
+
+* use plain text if error ([c103aca](https://github.com/toa-io/origin/commit/c103aca695a7bb3836bdd04062998652e39c1bd6))
+
 # [1.17.0](https://github.com/toa-io/origin/compare/v1.16.3...v1.17.0) (2026-02-10)
 
 
