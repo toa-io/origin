@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/toa-io/origin/compare/v1.17.1...v1.18.0) (2026-02-12)
+
+
+### Features
+
+* add `Workflow` type ([fbd73a2](https://github.com/toa-io/origin/commit/fbd73a2450c905349301a4ed2e7d77493651a3ab))
+
 ## [1.17.1](https://github.com/toa-io/origin/compare/v1.17.0...v1.17.1) (2026-02-10)
 
 
