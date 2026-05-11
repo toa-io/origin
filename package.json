@@ -27,7 +27,7 @@
     "README.md"
   ],
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5 || ^6"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",
