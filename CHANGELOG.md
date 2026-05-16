@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/toa-io/origin/compare/v1.18.0...v1.18.1) (2026-05-16)
+
+
+### Bug Fixes
+
+* detect Readable ([dde18e5](https://github.com/toa-io/origin/commit/dde18e5402574f261bf6bdacb4f36c6049e44ee0))
+
 # [1.18.0](https://github.com/toa-io/origin/compare/v1.17.1...v1.18.0) (2026-02-12)
 
 
