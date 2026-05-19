@@ -1,3 +1,10 @@
+## [1.18.2](https://github.com/toa-io/origin/compare/v1.18.1...v1.18.2) (2026-05-19)
+
+
+### Bug Fixes
+
+* remove node dependency ([9df1e95](https://github.com/toa-io/origin/commit/9df1e95e9d66da298b43953e3d054cf3a933e9b9))
+
 ## [1.18.1](https://github.com/toa-io/origin/compare/v1.18.0...v1.18.1) (2026-05-16)
 
 
