@@ -1,4 +1,3 @@
-import { Readable } from 'node:stream'
 import { Err } from 'error-value'
 import { meros } from 'meros/browser'
 import mitt from 'mitt'
@@ -138,7 +137,7 @@ class Agent {
     if (init.body !== undefined) {
       init.method ??= 'POST'
 
-      if (init.body instanceof File || init.body instanceof ReadableStream || init.body instanceof Readable) {
+      if (init.body instanceof File || init.body instanceof ReadableStream) {
         init.duplex = 'half'
         init.headers['content-type'] ??= (init.body as File).type ?? 'application/octet-stream'
       } else {
