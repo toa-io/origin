@@ -138,7 +138,11 @@ class Agent {
       init.method ??= 'POST'
 
       if (init.body instanceof File || init.body instanceof ReadableStream) {
-        init.duplex = 'half'
+        // required of a streaming upload and meaningless for a buffered body: only a stream
+        // is exposed to a reply that arrives before the body has finished being sent
+        if (init.body instanceof ReadableStream)
+          init.duplex = 'half'
+
         init.headers['content-type'] ??= (init.body as File).type ?? 'application/octet-stream'
       } else {
         init.body = JSON.stringify(init.body)
@@ -151,7 +155,7 @@ class Agent {
 
   private async request(path: string, init: RequestOptions): Promise<Response> {
     const url = new URL(path, this.origin)
-    const response = await this.fetch(url.href, init)
+    const response = await this.send(url.href, init)
 
     const challenge = response.headers.get('authorization')
 
@@ -161,6 +165,27 @@ class Agent {
     }
 
     return response
+  }
+
+  /**
+   * A request the server refuses before reading its body is answered and then cancelled —
+   * over HTTP/2 with `RST_STREAM(NO_ERROR)`, which stops the upload where it is. The reply
+   * may not survive that, and the stream being sent is left unread, so it is released here
+   * rather than held until it is collected.
+   */
+  private async send(href: string, init: RequestOptions): Promise<Response> {
+    if (!(init.body instanceof ReadableStream))
+      return await this.fetch(href, init)
+
+    const body: ReadableStream = init.body
+
+    try {
+      return await this.fetch(href, init)
+    } catch (error) {
+      await body.cancel().catch(() => undefined)
+
+      throw new Error('The upload was interrupted and the reply, if any, was lost', { cause: error })
+    }
   }
 }
 
