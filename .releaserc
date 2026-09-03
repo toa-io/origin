@@ -1,6 +1,6 @@
 {
   "repositoryUrl": "https://github.com/toa-io/origin.git",
-  "branches": ["dev"],
+  "branches": ["release"],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
