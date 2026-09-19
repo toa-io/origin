@@ -1,3 +1,11 @@
+## [1.18.4](https://github.com/toa-io/origin/compare/v1.18.3...v1.18.4) (2026-09-19)
+
+
+### Bug Fixes
+
+* drop error-value for an Error subclass of its own ([c80e4ab](https://github.com/toa-io/origin/commit/c80e4ab3ff15622132a1a9d1bd4a0a3e2c189cfd))
+* drop error-value for an Error subclass of its own ([#4](https://github.com/toa-io/origin/issues/4)) ([4d6bba4](https://github.com/toa-io/origin/commit/4d6bba4b9fda8315702a5adfae028c1fad9384aa))
+
 ## [1.18.3](https://github.com/toa-io/origin/compare/v1.18.2...v1.18.3) (2026-09-03)
 
 
