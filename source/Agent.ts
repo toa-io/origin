@@ -1,8 +1,7 @@
-import { Err } from 'error-value'
 import { meros } from 'meros/browser'
 import mitt from 'mitt'
+import { Failure, type GenericError } from './Error'
 import { setMeta } from './meta'
-import type { GenericError } from './Error'
 import type { Events } from './Events'
 import type { Faulty, OctetsEntry, WorkflowStep } from './Octets'
 import type { Emitter } from 'mitt'
@@ -41,7 +40,7 @@ class Agent {
     } else {
       this.events.emit('error', { code: response.status, body })
 
-      return new Err(response.status, body) as E
+      return new Failure(response.status, body) as E
     }
   }
 
@@ -50,7 +49,7 @@ class Agent {
     const response = await this.request(path, options)
 
     if (!response.ok)
-      return new Err(response.status, { body: await response.text() })
+      return new Failure(response.status, { body: await response.text() })
 
     const generator = await meros(response) as AsyncGenerator<{ body: string }>
     const ack = await generator.next()
@@ -94,9 +93,9 @@ class Agent {
         const payload =
           part.status === 'completed'
             ? part.error
-              ? new Err(part.error.code ?? 'UNKNOWN', part.error.message)
+              ? new Failure(part.error.code ?? 'UNKNOWN', part.error)
               : part.output
-            : new Err('EXCEPTION')
+            : new Failure('EXCEPTION')
 
         if (init?.debug)
           console.debug('Emitting octets step', { path, step: part.step, payload })
