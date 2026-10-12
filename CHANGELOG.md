@@ -1,3 +1,11 @@
+## [1.18.5](https://github.com/toa-io/origin/compare/v1.18.4...v1.18.5) (2026-10-12)
+
+
+### Bug Fixes
+
+* drop credentials mode when a request states its own authorization ([bea51dc](https://github.com/toa-io/origin/commit/bea51dc4badd683dd3d2621a038a43c0f84fe199))
+* drop credentials mode when a request states its own authorization ([#6](https://github.com/toa-io/origin/issues/6)) ([532d870](https://github.com/toa-io/origin/commit/532d870a3fe6e33556892574ae18a39cc5263919))
+
 ## [1.18.4](https://github.com/toa-io/origin/compare/v1.18.3...v1.18.4) (2026-09-19)
 
 
