@@ -125,12 +125,17 @@ class Agent {
     if (this.sleep !== undefined)
       init.headers['sleep'] = this.sleep
 
-    if (init.credentials === 'include' && init.headers['authorization'] === undefined) {
-      if (this.challenge === null)
-        throw new Error('Credentials must be set before sending authenticated request')
+    if (init.credentials === 'include') {
+      if (init.headers['authorization'] === undefined) {
+        if (this.challenge === null)
+          throw new Error('Credentials must be set before sending authenticated request')
 
-      init.headers['authorization'] = this.challenge
-      delete init.credentials // no cookies
+        init.headers['authorization'] = this.challenge
+      }
+
+      // no cookies: `include` names the challenge, and a request that states its own
+      // `authorization` must not reach `fetch` in a credentials mode a wildcard CORS reply refuses
+      delete init.credentials
     }
 
     if (init.body !== undefined) {
